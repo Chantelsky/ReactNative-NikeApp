@@ -1,5 +1,5 @@
 import { Text, FlatList, View, StyleSheet, Pressable } from 'react-native'
-import CartListItem from './components/CartListItem'
+import CartListItem from '../components/CartListItem'
 import cart from '../data/cart';
 
 const ShoppingCartTotals = () => (
