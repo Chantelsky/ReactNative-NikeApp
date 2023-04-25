@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { useDispatch } from 'react-redux';
-import { cartSlice } from '../store/cartSlice';
+import { useDispatch } from "react-redux";
+import { cartSlice } from "../store/cartSlice";
 
 const CartListItem = ({ cartItem }) => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const CartListItem = ({ cartItem }) => {
         productId: cartItem.product.id,
         amount: 1,
       })
-    )
+    );
   };
 
   const decreaseQuantity = () => {
@@ -21,7 +21,7 @@ const CartListItem = ({ cartItem }) => {
         productId: cartItem.product.id,
         amount: -1,
       })
-    )
+    );
   };
 
   return (
@@ -45,7 +45,9 @@ const CartListItem = ({ cartItem }) => {
             size={24}
             color="gray"
           />
-          <Text style={styles.itemTotal}>$320.0</Text>
+          <Text style={styles.itemTotal}>
+            ${cartItem.product.price * cartItem.quantity}
+          </Text>
         </View>
       </View>
     </View>

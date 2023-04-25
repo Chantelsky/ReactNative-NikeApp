@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import products from '../data/products';
+import { createSlice } from "@reduxjs/toolkit";
+import products from "../data/products";
 
 const initialState = {
   products,
@@ -7,12 +7,12 @@ const initialState = {
 };
 
 export const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {
     setSelectedProduct: (state, action) => {
       const productId = action.payload;
-      state.selectedProduct = state.products.find(p => p.id === productId);
-    }
-  }
-})
+      state.selectedProduct = state.products.find((p) => p.id === productId);
+    },
+  },
+});
