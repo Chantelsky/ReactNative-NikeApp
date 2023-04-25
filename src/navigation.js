@@ -39,7 +39,19 @@ const Navigation = () => {
         <Stack.Screen
           name="Product Details"
           component={ProductDetailsScreen}
-          options={{ presentation: "modal" }}
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <Pressable
+                onPress={() => navigation.navigate("Cart")}
+                style={{ flexDirection: "row" }}
+              >
+                <FontAwesome5 name="shopping-cart" size={18} color="gray" />
+                <Text style={{ marginLeft: 5, fontWeight: "500" }}>
+                  {numberOfItemsInCart}
+                </Text>
+              </Pressable>
+            ),
+          })}
         />
         <Stack.Screen name="Cart" component={ShoppingCart} />
       </Stack.Navigator>
